@@ -26,8 +26,7 @@ import org.apache.spark.sql.SparkSession
 object SparkPi {
   def main(args: Array[String]) {
     val spark = SparkSession
-      .builder
-      .master("local[2]")
+      .builder      
       .appName("Spark Pi")
       .getOrCreate()
     val slices = if (args.length > 0) args(0).toInt else 2
