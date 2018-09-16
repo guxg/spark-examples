@@ -112,6 +112,9 @@ object LinearRegressionExample {
     val (training: DataFrame, test: DataFrame) = DecisionTreeExample.loadDatasets(params.input,
       params.dataFormat, params.testInput, "regression", params.fracTest)
 
+    training.printSchema()
+    test.printSchema()
+
     val lir = new LinearRegression()
       .setFeaturesCol("features")
       .setLabelCol("label")
